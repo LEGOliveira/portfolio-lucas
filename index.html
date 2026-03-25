@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lucas Oliveira — Dev Portfolio</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <canvas id="bgCanvas"></canvas>
+
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">&lt;<span>Lucas Oliveira</span>/&gt;</a>
+    <ul class="nav-links">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#experiencia">Experiência</a></li>
+      <li><a href="#contratar" class="nav-hire">Me Contrate</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <div class="nav-toggle" id="navToggle">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <section id="hero">
+    <div class="hero-content">
+      <p class="hero-tag">Disponível para novos projetos</p>
+      <h1 class="hero-name">
+        <span class="line1">Welcome!</span>
+        <span class="line2">My name is <span class="accent-word">Lucas</span></span>
+      </h1>
+      <p class="hero-role">
+        <span class="typed-text" id="typedText"></span><span class="typed-cursor">|</span>
+      </p>
+      <p class="hero-sub">
+        Construo experiências digitais com código limpo, design intencional e muita atenção aos detalhes. Apaixonado por
+        transformar ideias em produtos reais.
+      </p>
+      <div class="hero-cta">
+        <a href="#projetos" class="btn-primary">Projetos</a>
+        <a href="#contato" class="btn-secondary">Entrar em contato</a>
+      </div>
+    </div>
+
+    <div class="hero-social">
+      <a href="https://github.com/LEGOliveira" target="_blank" class="social-icon" title="GitHub">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.48 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+        </svg>
+      </a>
+      <a href="https://www.linkedin.com/in/lucas-oliveira-bbb061298" target="_blank" class="social-icon"
+        title="LinkedIn">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" />
+        </svg>
+      </a>
+      <a href="https://instagram.com/seuusuario" target="_blank" class="social-icon" title="Instagram">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+        </svg>
+      </a>
+      <a href="mailto:l.emanoeloliveira@outlook.com" class="social-icon" title="E-mail">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z" />
+        </svg>
+      </a>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <section id="sobre">
+    <div class="container sobre-grid">
+      <div class="sobre-text reveal">
+        <p class="section-label">Sobre mim</p>
+        <h2 class="section-title">Quem está<br><em>por trás do código</em></h2>
+        <p>Sou desenvolvedor <strong>Full Stack</strong> apaixonado por criar soluções que fazem diferença. Trabalho com
+          tecnologias modernas e gosto de unir performance com bom design.</p>
+        <p>Quando não estou codando, estou estudando novas tecnologias, contribuindo para projetos open-source ou
+          explorando como a IA pode transformar produtos.</p>
+        <div class="sobre-chips">
+          <span>Foco em performance</span>
+          <span>Clean code</span>
+          <span>Open Source</span>
+          <span>Always learning</span>
+        </div>
+      </div>
+      <div class="sobre-stats reveal">
+        <div class="stat-card">
+          <div class="stat-num" data-target="3">0</div>
+          <div class="stat-label">Anos de experiência</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" data-target="5">0</div>
+          <div class="stat-label">Projetos entregues</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" data-target="5">0</div>
+          <div class="stat-label">Tecnologias dominadas</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" data-target="5">0</div>
+          <div class="stat-label">Clientes satisfeitos</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Stack técnica</p>
+        <h2 class="section-title">Skills &amp;<br><em>Tecnologias</em></h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-category reveal">
+          <div class="skill-cat-icon">⚡</div>
+          <h3 class="skill-cat-title">Front-end</h3>
+          <div class="skill-list">
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">Tailwind</span>
+          </div>
+        </div>
+        <div class="skill-category reveal">
+          <div class="skill-cat-icon">🛠️</div>
+          <h3 class="skill-cat-title">Back-end</h3>
+          <div class="skill-list">
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Express</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">REST API</span>
+          </div>
+        </div>
+        <div class="skill-category reveal">
+          <div class="skill-cat-icon">☁️</div>
+          <h3 class="skill-cat-title">DevOps &amp; Cloud</h3>
+          <div class="skill-list">
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Linux</span>
+            <span class="skill-tag">AWS</span>
+            <span class="skill-tag">CI/CD</span>
+          </div>
+        </div>
+        <div class="skill-category reveal">
+          <div class="skill-cat-icon">🎨</div>
+          <h3 class="skill-cat-title">Ferramentas</h3>
+          <div class="skill-list">
+            <span class="skill-tag">VS Code</span>
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">Postman</span>
+            <span class="skill-tag">GitHub</span>
+            <span class="skill-tag">Vercel</span>
+            <span class="skill-tag">IntelliJ</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projetos">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Portfólio</p>
+        <h2 class="section-title">Projetos em<br><em>destaque</em></h2>
+      </div>
+      <div class="projects-grid">
+
+        <article class="project-card featured reveal">
+          <div class="project-info">
+            <span class="project-num">01 — Featured</span>
+            <h3 class="project-title">Nome do Projeto Principal</h3>
+            <p class="project-desc">Uma plataforma completa para gestão de tarefas com autenticação, painel em tempo
+              real e integração com APIs externas. Desenvolvida do zero com foco em performance e UX.</p>
+            <div class="project-tags">
+              <span>React</span><span>Node.js</span><span>MongoDB</span><span>AWS</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="proj-link" target="_blank">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.48 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+                Código
+              </a>
+              <a href="#" class="proj-link live" target="_blank">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M14 3v2H5v14h14v-9h2v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10zm7 0v5h-2V6.41l-7.29 7.3-1.42-1.42L19.59 5H17V3h4z" />
+                </svg>
+                Demo ao vivo
+              </a>
+            </div>
+          </div>
+          <div class="project-visual">
+            <div class="project-mockup">
+              <div class="mockup-bar"><span></span><span></span><span></span></div>
+              <div class="mockup-content">
+                <div class="mockup-line w80 accent"></div>
+                <div class="mockup-line w60"></div>
+                <div class="mockup-line w90"></div>
+                <div class="mockup-grid">
+                  <div class="mockup-card"></div>
+                  <div class="mockup-card"></div>
+                  <div class="mockup-card accent-bg"></div>
+                  <div class="mockup-card"></div>
+                </div>
+                <div class="mockup-line w50"></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <span class="project-num">02</span>
+          <h3 class="project-title">Segundo Projeto</h3>
+          <p class="project-desc">Aplicativo mobile-first para controle financeiro pessoal, com gráficos interativos e
+            exportação de relatórios.</p>
+          <div class="project-tags">
+            <span>React</span><span>Chart.js</span><span>Firebase</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="proj-link" target="_blank">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.48 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+              </svg>
+              Código
+            </a>
+            <a href="#" class="proj-link live" target="_blank">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M14 3v2H5v14h14v-9h2v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10zm7 0v5h-2V6.41l-7.29 7.3-1.42-1.42L19.59 5H17V3h4z" />
+              </svg>
+              Demo
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <span class="project-num">03</span>
+          <h3 class="project-title">Terceiro Projeto</h3>
+          <p class="project-desc">API RESTful para e-commerce com autenticação JWT, pagamentos integrados e painel
+            administrativo.</p>
+          <div class="project-tags">
+            <span>Node.js</span><span>PostgreSQL</span><span>Docker</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="proj-link" target="_blank">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.48 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+              </svg>
+              Código
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="experiencia">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Trajetória</p>
+        <h2 class="section-title">Experiência<br><em>profissional</em></h2>
+      </div>
+      <div class="timeline">
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2023 — Atual</div>
+          <div class="timeline-content">
+            <h3>Desenvolvedor Full Stack</h3>
+            <span class="timeline-company">Autônomo · Remoto</span>
+            <p>Desenvolvimento de features no produto principal, refatoração de módulos legados, e liderança técnica em
+              projetos internos. Redução de 40% no tempo de carregamento da aplicação.</p>
+            <div class="timeline-tags">
+              <span>React</span><span>Node.js</span><span>AWS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contratar">
+    <div class="container">
+
+      <div class="hire-header reveal">
+        <p class="section-label">Oportunidade</p>
+        <h2 class="section-title">Deseja me contratar<br><em>para um projeto?</em></h2>
+        <p class="hire-subtitle">Estou disponível para novos desafios. Escolha o tipo de colaboração e me conta o que
+          você precisa.</p>
+      </div>
+
+      <div class="hire-tabs reveal">
+        <button class="hire-tab active" data-tab="freelance">
+          <span class="tab-icon"></span>
+          <span class="tab-label">Freelance / Projeto</span>
+        </button>
+        <button class="hire-tab" data-tab="clt">
+          <span class="tab-icon"></span>
+          <span class="tab-label">Vaga CLT</span>
+        </button>
+        <button class="hire-tab" data-tab="pj">
+          <span class="tab-icon"></span>
+          <span class="tab-label">Contrato PJ</span>
+        </button>
+        <button class="hire-tab" data-tab="mentoria">
+          <span class="tab-icon"></span>
+          <span class="tab-label">Mentoria</span>
+        </button>
+      </div>
+
+      <div class="hire-body">
+
+        <div class="hire-info reveal">
+
+          <div class="availability-card">
+            <div class="avail-dot"></div>
+            <div>
+              <div class="avail-title">Disponível agora</div>
+              <div class="avail-sub">Respondendo em até 24h</div>
+            </div>
+          </div>
+
+          <div class="hire-offer" id="offerFreelance">
+            <h4>O que você recebe</h4>
+            <ul class="offer-list">
+              <li><span>✦</span> Desenvolvimento completo do zero ao deploy</li>
+              <li><span>✦</span> Reuniões de alinhamento em cada etapa</li>
+              <li><span>✦</span> Código documentado e entregue no GitHub</li>
+              <li><span>✦</span> Suporte pós-entrega por 30 dias</li>
+              <li><span>✦</span> Prazo e orçamento combinados previamente</li>
+            </ul>
+          </div>
+
+          <div class="hire-offer hidden" id="offerClt">
+            <h4>O que trago para o time</h4>
+            <ul class="offer-list">
+              <li><span>✦</span> Domínio de front e back em stack moderna</li>
+              <li><span>✦</span> Cultura de code review e testes</li>
+              <li><span>✦</span> Autonomia técnica com visão de produto</li>
+              <li><span>✦</span> Comunicação clara e proatividade</li>
+              <li><span>✦</span> Aberto a remoto, híbrido ou presencial</li>
+            </ul>
+          </div>
+
+          <div class="hire-offer hidden" id="offerPj">
+            <h4>Modelo de contratação PJ</h4>
+            <ul class="offer-list">
+              <li><span>✦</span> Alocação mensal com escopo definido</li>
+              <li><span>✦</span> Foco total na sua stack e produto</li>
+              <li><span>✦</span> Entrega orientada a resultados</li>
+              <li><span>✦</span> Início rápido, sem burocracia</li>
+              <li><span>✦</span> Renovação flexível por ciclo</li>
+            </ul>
+          </div>
+
+          <div class="hire-offer hidden" id="offerMentoria">
+            <h4>Como funciona a mentoria</h4>
+            <ul class="offer-list">
+              <li><span>✦</span> Sessões 1:1 pelo Google Meet ou Discord</li>
+              <li><span>✦</span> Revisão de código e projetos pessoais</li>
+              <li><span>✦</span> Roadmap personalizado de estudos</li>
+              <li><span>✦</span> Preparação para entrevistas técnicas</li>
+              <li><span>✦</span> Frequência semanal ou quinzenal</li>
+            </ul>
+          </div>
+
+          <div class="hire-channels">
+            <p class="channels-label">// Contato direto</p>
+            <a href="mailto:l.emanoeloliveira@outlook.com" class="channel-pill">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z" />
+              </svg>
+              E-mail
+            </a>
+            <a href="https://www.linkedin.com/in/lucas-oliveira-bbb061298" target="_blank" class="channel-pill">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 .77 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" />
+              </svg>
+              LinkedIn
+            </a>
+            <a href="https://github.com/LEGOliveira" target="_blank" class="channel-pill">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.48 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+              </svg>
+              GitHub
+            </a>
+          </div>
+
+        </div>
+
+        <form class="hire-form reveal" id="hireForm">
+          <input type="hidden" id="hireType" value="freelance" />
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="hireName">Seu nome</label>
+              <input type="text" id="hireName" placeholder="João Silva" required />
+            </div>
+            <div class="form-group">
+              <label for="hireEmail">E-mail</label>
+              <input type="email" id="hireEmail" placeholder="joao@empresa.com" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="hireCompany">Empresa / Organização <span class="label-opt">(opcional)</span></label>
+            <input type="text" id="hireCompany" placeholder="Nome da empresa" />
+          </div>
+
+          <div class="form-group">
+            <label for="hireBudget" id="budgetLabel">Orçamento estimado</label>
+            <select id="hireBudget">
+              <option value="">Selecione uma faixa...</option>
+              <option>Até R$ 2.000</option>
+              <option>R$ 2.000 — R$ 5.000</option>
+              <option>R$ 5.000 — R$ 15.000</option>
+              <option>R$ 15.000 — R$ 30.000</option>
+              <option>Acima de R$ 30.000</option>
+              <option>A combinar</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="hireDeadline" id="deadlineLabel">Prazo desejado</label>
+            <select id="hireDeadline">
+              <option value="">Selecione...</option>
+              <option>Urgente (menos de 2 semanas)</option>
+              <option>Curto prazo (1 mês)</option>
+              <option>Médio prazo (2–3 meses)</option>
+              <option>Longo prazo (3+ meses)</option>
+              <option>Sem prazo definido</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="hireDesc">Descreva o projeto / vaga</label>
+            <textarea id="hireDesc" rows="5"
+              placeholder="Conte sobre o que precisa, tecnologias envolvidas, desafios..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-hire">
+            <span class="btn-hire-text">Enviar proposta →</span>
+            <span class="btn-hire-success hidden">Proposta recebida! ✓</span>
+          </button>
+
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="container contato-inner">
+      <div class="contato-text reveal">
+        <p class="section-label">Vamos conversar</p>
+        <h2 class="section-title">Tem um projeto<br><em>em mente?</em></h2>
+        <p>Estou disponível para projetos freelance, oportunidades CLT/PJ e colaborações. Me manda uma mensagem —
+          respondo em até 24h.</p>
+        <div class="contato-links">
+          <a href="mailto:l.emanoeloliveira@outlook.com" class="contato-link">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z" />
+            </svg>
+            l.emanoeloliveira@outlook.com
+          </a>
+          <a href="https://www.linkedin.com/in/lucas-oliveira-bbb061298" target="_blank" class="contato-link">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 .77 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" />
+            </svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+      <form class="contato-form reveal" id="contactForm">
+        <div class="form-group">
+          <label for="name">Nome</label>
+          <input type="text" id="name" placeholder="Seu nome" required />
+        </div>
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" placeholder="seu@email.com" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Mensagem</label>
+          <textarea id="message" rows="5" placeholder="Conta um pouco sobre seu projeto..." required></textarea>
+        </div>
+        <button type="submit" class="btn-primary btn-full">Enviar mensagem →</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <a href="#hero" class="nav-logo">&lt;<span>Lucas Oliveira</span>/&gt;</a>
+      <div class="footer-social">
+        <a href="https://github.com/LEGOliveira" target="_blank" class="social-icon">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.48 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/lucas-oliveira-bbb061298" target="_blank" class="social-icon">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 .77 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" />
+          </svg>
+        </a>
+        <a href="mailto:l.emanoeloliveira@outlook.com" class="social-icon">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
